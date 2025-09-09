@@ -1,0 +1,123 @@
+.hero {
+  aspect-ratio: 16 / 9;
+  display: flex;
+  text-wrap: nowrap;
+  position: relative;
+  isolation: isolate;
+}
+
+.hero > div {
+  flex: 1 0 50%;
+}
+
+.info {
+  padding: 5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  color: #cfcfcf;
+}
+
+.music,
+.actions {
+  margin-left: 1.5rem;
+}
+
+.info h2 {
+  font-size: small;
+}
+
+.music h3 {
+  font-size: large;
+}
+
+.music h4 {
+  margin-top: var(--radius);
+  font-size: small;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.listen,
+.fav {
+  border-radius: 1000px;
+  cursor: pointer;
+}
+
+.listen {
+  padding: 1rem 2rem;
+  font-weight: bold;
+  text-align: center;
+  color: var(--secondary);
+  background: var(--primary);
+}
+
+.fav {
+  color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  aspect-ratio: 1;
+  border: 1px solid var(--border);
+  background: var(--background);
+}
+
+.fav svg {
+  fill: var(--primary);
+  height: 2.25rem;
+}
+
+.imgDiv {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  border-radius: var(--radius);
+}
+
+.imgDiv::after {
+  content: "";
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  inset: 0;
+  border-radius: inherit;
+}
+
+.imgDiv img {
+  height: 100%;
+  width: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+  .imgDiv::after {
+    background: rgba(0, 0, 0, 0.35);
+  }
+}
+
+@media screen and (width > 860px) {
+  .hero {
+    aspect-ratio: 22 / 9;
+  }
+
+  .info h2 {
+    font-size: 1.8rem;
+  }
+
+  .music h3 {
+    font-size: larger;
+  }
+
+  .music h4 {
+    font-size: medium;
+  }
+}
+
+@media screen and (width > 1160px) {
+  .info {
+    padding: 8rem 5rem;
+  }
+}

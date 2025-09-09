@@ -1,0 +1,57 @@
+[
+  {
+    "_id": "1",
+    "title": "Sona Kitna Sona Hai",
+    "thumbnail": "https://i.ytimg.com/vi/aoXcIilQ_TA/hq720.jpg",
+    "category": "classics",
+    "url": "/songs/sona-kitna.mp3",
+    "author": {
+      "artist": "Vinod Rathod",
+      "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Vinod_Rathod.jpg/250px-Vinod_Rathod.jpg"
+    }
+  },
+  {
+    "_id": "2",
+    "title": "Suniye To Rukiye To",
+    "thumbnail": "https://i.ytimg.com/vi/TJ24Y1cUaT4/hq720.jpg",
+    "category": "classics",
+    "url": "/songs/suniya-to.mp3",
+    "author": {
+      "artist": "Abhijeet",
+      "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Abhijeet_graces_%E2%80%98Big_Life_OK_Now_Awards_2014%E2%80%99.jpg/250px-Abhijeet_graces_%E2%80%98Big_Life_OK_Now_Awards_2014%E2%80%99.jpg"
+    }
+  },
+  {
+    "_id": "3",
+    "title": "Koi Na Koi Chahiye Pyar Karne Wala",
+    "thumbnail": "https://i.ytimg.com/vi/0A6WPBsUHHI/hq720.jpg",
+    "category": "classics",
+    "url": "/songs/koi-na-koi.mp3",
+    "author": {
+      "artist": "Vinod Rathod",
+      "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Vinod_Rathod.jpg/250px-Vinod_Rathod.jpg"
+    }
+  },
+  {
+    "_id": "4",
+    "title": "Saiyaara",
+    "thumbnail": "https://i.ytimg.com/vi/kj384l5D1zE/hq720.jpg",
+    "category": "classics",
+    "url": "/songs/saiyaara.mp3",
+    "author": {
+      "artist": "Kishore Kumar",
+      "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Kishore_Kumar_2016_postcard_of_India_%28cropped%29.jpg/250px-Kishore_Kumar_2016_postcard_of_India_%28cropped%29.jpg"
+    }
+  },
+  {
+    "_id": "5",
+    "title": "Suno Miya Suno Miya om",
+    "thumbnail": "https://i.ytimg.com/vi/aPkJWkETcoo/hq720.jpg",
+    "category": "classics",
+    "url": "/songs/suno-miya.mp3",
+    "author": {
+      "artist": "Udit Narayan",
+      "avatar": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Celebs_at_the_screening_of_the_A.R._Rahman%27s_documentary_03.jpg"
+    }
+  }
+]

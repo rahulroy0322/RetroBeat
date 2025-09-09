@@ -1,0 +1,54 @@
+.aside {
+  background: var(--background);
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  transform: translateX(100%);
+  width: 40rem;
+  padding-top: 5rem;
+  transition: transform 0.25s;
+}
+
+.open {
+  transform: translateX(0);
+}
+
+.toggle {
+  border: 1px solid var(--border);
+  padding: 0.25rem;
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+  border-radius: var(--radius);
+  position: absolute;
+  top: 0.5rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: calc(100% + 1rem);
+}
+
+.toggle:hover {
+  border-color: var(--primary);
+}
+
+.open .toggle {
+  right: 1rem;
+}
+
+.toggle svg {
+  color: var(--primary);
+}
+
+@media (width > 860px) {
+  .aside {
+    position: static;
+    transform: translateX(0);
+  }
+
+  .toggle {
+    display: none;
+  }
+}

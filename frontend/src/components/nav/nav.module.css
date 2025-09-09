@@ -1,0 +1,49 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  justify-content: center;
+}
+
+.ul {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.ul li a {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.ul svg {
+  height: 3.5rem;
+}
+
+.ul a span {
+  position: absolute;
+  left: 300%;
+  margin-bottom: 2rem;
+  opacity: 0;
+  font-size: medium;
+  text-wrap: nowrap;
+  user-select: none;
+  visibility: hidden;
+  z-index: 9999;
+}
+.ul :where(svg, span) {
+  transition: all 0.25s;
+}
+
+.ul a svg:hover,
+.ul a svg:hover + span {
+  color: var(--primary);
+}
+.ul a svg:hover + span {
+  visibility: visible;
+  opacity: 1;
+  left: 120%;
+  margin-bottom: 0;
+}

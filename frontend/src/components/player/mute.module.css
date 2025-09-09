@@ -1,0 +1,20 @@
+
+.button {
+  --pos: 4%;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  overflow: hidden;
+  height: 3rem;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  top: var(--pos);
+  left: var(--pos);
+}
+
+.button  svg{
+  pointer-events: none;
+}

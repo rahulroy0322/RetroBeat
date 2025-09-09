@@ -1,0 +1,41 @@
+.volume,
+.volume::after,
+.volume::before {
+  position: absolute;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+.volume {
+  --pos: 3.5%;
+  background: rgb(0 0 0/ 0.1);
+  bottom: var(--pos);
+  right: var(--pos);
+  height: 7.5rem;
+  isolation: isolate;
+}
+
+.volume::after,
+.volume::before {
+  transform: translate(-50%, -50%);
+  content: "";
+}
+
+.volume::before {
+  background: var(--background);
+  border: 0.5px solid var(--ring);
+  height: calc(100% - 0.8rem);
+  left: 50%;
+  top: 50%;
+  z-index: -1;
+}
+
+.volume::after {
+  --indicator: 29%;
+  color: var(--primary);
+  background: currentColor;
+  box-shadow: 0 0 0.4em 0 currentColor;
+  height: 1rem;
+  bottom: var(--indicator);
+  left: var(--indicator);
+}

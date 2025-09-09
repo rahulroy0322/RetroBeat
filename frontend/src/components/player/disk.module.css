@@ -1,0 +1,53 @@
+
+.disk,
+.roter,
+.thubnail {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.disk {
+  background: var(--muted);
+  width: 90%;
+  position: relative;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.roter {
+  background: var(--foreground);
+  width: 80%;
+  position: relative;
+  overflow: hidden;
+  animation: rotate 10s linear infinite;
+  animation-play-state: paused;
+}
+
+.playing {
+  animation-play-state: running;
+}
+
+.roter::after {
+  content: "";
+  position: absolute;
+  box-shadow: inset 0 0 50px var(--muted-foreground);
+  height: 100%;
+  width: 8rem;
+}
+
+.thubnail {
+  position: absolute;
+  background: blue;
+  width: 60%;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

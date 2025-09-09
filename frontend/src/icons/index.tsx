@@ -1,0 +1,13 @@
+export { default as HomeIcon } from "./home";
+export { default as HeartIcon } from "./heart";
+export { default as TagIcon } from "./tag";
+export { default as SettingIcon } from "./setting";
+export { default as MusicIcon } from "./music";
+export { default as LibraryIcon } from "./library";
+export { default as ChevronIcon } from "./chevron";
+export { default as PlayIcon } from "./play";
+export { default as PauseIcon } from "./pause";
+export { default as NextIcon } from "./next";
+export { default as PrevIcon } from "./prev";
+export { default as ShuffleIcon } from "./shuffle";
+export { Repeat1Icon, RepeatIcon } from "./loop";
