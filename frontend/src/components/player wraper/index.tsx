@@ -3,10 +3,11 @@ import classes from "./wraper.module.css";
 
 type PlayerWraperPropsType = {
   children: ReactNode;
+  className?: string
 };
 
-const PlayerWraper: FC<PlayerWraperPropsType> = ({ children }) => (
-  <div className={classes.wraper} role="presentation">
+const PlayerWraper: FC<PlayerWraperPropsType> = ({ children, className = '' }) => (
+  <div className={`${classes.wraper} ${className}`} role="presentation">
     {children}
   </div>
 );

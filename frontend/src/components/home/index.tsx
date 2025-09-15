@@ -2,7 +2,7 @@ import { cache, Suspense, use, type FC } from "react";
 // import classes from "./home.module.css";
 import HeroSection from "../hero";
 import TopArtistSection from "../top artist";
-import SongList from "../songs list";
+import {SongListSection} from "../songs list";
 import type { SongDataType } from "../../@types/song.types";
 
 const getSongData = cache(async () => {
@@ -26,7 +26,7 @@ const HomePageImpl: FC<HomePageImplPropsType> = ({ promise }) => {
       {/* todo make impl */}
       <HeroSection song={topSong} />
       <TopArtistSection artists={artists} />
-      <SongList songs={data} />
+      <SongListSection songs={data} />
     </div>
   );
 };

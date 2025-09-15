@@ -7,6 +7,7 @@ import PlayerWraper from "../player wraper";
 import PlayerActions from "../actions";
 import PlayerAudio from "../audio";
 import PlayerEvents from "../events";
+import PlayListQueue from "../play-list-queue";
 
 const AsidePlayer: FC = () => {
   const [open, setOpen] = useState(true);
@@ -30,6 +31,8 @@ const AsidePlayer: FC = () => {
         <PlayerAudio />
         <PlayerEvents />
       </PlayerWraper>
+
+      <PlayListQueue />
     </aside>
   );
 };

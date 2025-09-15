@@ -11,3 +11,4 @@ export { default as NextIcon } from "./next";
 export { default as PrevIcon } from "./prev";
 export { default as ShuffleIcon } from "./shuffle";
 export { Repeat1Icon, RepeatIcon } from "./loop";
+export { default as TrashIcon } from "./trash";

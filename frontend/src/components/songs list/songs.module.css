@@ -20,6 +20,10 @@
   cursor: pointer;
 }
 
+.info{
+  flex-grow: 1;
+}
+
 .item h3 {
   font-size: medium;
   font-weight: bold;
@@ -29,6 +33,15 @@
   font-size: small;
   color: var(--muted-foreground);
   font-weight: normal;
+}
+
+.trash{
+  margin-top: .8rem;
+  align-self: baseline;
+  aspect-ratio: 1;
+  height: 2rem;
+  cursor: pointer;
+  margin-right: 1.2rem;
 }
 
 .thubnail {

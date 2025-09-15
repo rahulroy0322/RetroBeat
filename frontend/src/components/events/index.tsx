@@ -86,7 +86,7 @@ const PlayerEventsImpl: FC = () => {
     };
   }, [ref]);
 
-  return <div></div>;
+  return null
 };
 
 const PlayerEvents: FC = () => {

@@ -5,12 +5,15 @@ import PlayerVolume from "./volume";
 import { useMusic } from "../../store/music";
 import type { FC } from "react";
 import PlayerMute from "./mute";
-import { useMusicInfo } from "../../store/music-info";
+import { usePlayList } from "../../store/playlist";
 
 const DiskandNob: FC = () => {
   const isPlaying = useMusic((state) => state.isPlaying);
-  const title = useMusicInfo((state) => state.title);
-  const thumbnail = useMusicInfo((state) => state.thumbnail);
+  const song = usePlayList(
+    (state) => state.queue.find((song) => song._id === state.id)!
+  );
+
+  const { title, thumbnail } = song || {};
 
   console.log("rendaring", "disk nob");
 

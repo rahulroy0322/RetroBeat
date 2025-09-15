@@ -11,6 +11,7 @@ import {
 } from "../../icons";
 import { handleModeToggle, useMusic } from "../../store/music";
 import { handelPlayChange } from "../../store/audio";
+import { setPlayingId, setPlayList, usePlayList } from "../../store/playlist";
 
 type ActionButtonPropsType = {
   children: ReactNode;
@@ -109,7 +110,12 @@ const NextButton: FC = () => {
 };
 
 const ShuffleButton: FC = () => {
-  const handleRandom = useCallback(() => {}, []);
+  const handleRandom = useCallback(() => {
+    const id = usePlayList.getState().id;
+    const queue = usePlayList.getState().queue.sort(() => Math.random() - 0.5);
+    setPlayList([...queue]);
+    setPlayingId(id);
+  }, []);
 
   console.log("rendering", "random");
 

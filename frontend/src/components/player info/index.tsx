@@ -3,8 +3,8 @@ import classes from "./info.module.css";
 import Badge from "../badge";
 import Range from "../range";
 import { formateTime } from "../../utils/lib";
-import { useMusicInfo } from "../../store/music-info";
 import { handelSeek, useAudio } from "../../store/audio";
+import { usePlayList } from "../../store/playlist";
 
 type PlayerTimePropsType = {
   time: string;
@@ -33,8 +33,11 @@ const PlayerRange: FC = () => {
 };
 
 const PlayerInfo: FC = () => {
-  const title = useMusicInfo((state) => state.title);
-  const category = useMusicInfo((state) => state.category);
+  const song = usePlayList(
+    (state) => state.queue.find((song) => song._id === state.id)!
+  );
+
+  const { title, category } = song || {};
 
   return (
     <div className={classes.main}>

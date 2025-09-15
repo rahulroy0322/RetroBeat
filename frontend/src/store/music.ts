@@ -1,25 +1,35 @@
 import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
 type ModeType = "one" | "all" | "none";
 
 type UseMusicType = {
   mode: ModeType;
-
   isPlaying: boolean;
-  setIsPlaying: (isPlaying: boolean) => void;
 };
 
-const useMusic = create<UseMusicType>((set) => ({
-  mode: "none",
-  isPlaying: false,
-
-  setIsPlaying: (isPlaying) =>
-    set({
-      isPlaying,
+const useMusic = create(
+  persist<UseMusicType>(
+    () => ({
+      mode: "none",
+      isPlaying: false,
     }),
-}));
+    {
+      name: "music-preferences",
+      partialize: (state) => ({
+        mode: state.mode,
+        isPlaying: false,
+      }),
+    }
+  )
+);
 
 const { getState: get, setState: set } = useMusic;
+
+const setIsPlaying = (isPlaying: boolean) =>
+  set({
+    isPlaying,
+  });
 
 const handleModeToggle = () => {
   const _mode = get().mode;
@@ -30,4 +40,4 @@ const handleModeToggle = () => {
   });
 };
 
-export { useMusic, handleModeToggle };
+export { useMusic, handleModeToggle, setIsPlaying };

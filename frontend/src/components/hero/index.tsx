@@ -2,29 +2,22 @@ import { type FC } from "react";
 import classes from "./hero.module.css";
 import { HeartIcon } from "../../icons";
 import type { SongDataType } from "../../@types/song.types";
-import { useMusicInfo } from "../../store/music-info";
+import { addToPlayList, setPlayingId } from "../../store/playlist";
 
 type HeroSectionPropsType = {
   song: SongDataType;
 };
 
-const HeroSection: FC<HeroSectionPropsType> = ({
-  song: {
+const HeroSection: FC<HeroSectionPropsType> = ({ song }) => {
+  const {
     title,
     thumbnail,
     author: { artist },
-    category,
-    url,
-  },
-}) => {
-  const setInfo = useMusicInfo((state) => state.setInfo);
+    _id,
+  } = song;
   const handelClick = () => {
-    setInfo({
-      category,
-      title,
-      url,
-      thumbnail
-    });
+    addToPlayList(song);
+    setPlayingId(_id);
   };
   return (
     <section className={classes.hero}>

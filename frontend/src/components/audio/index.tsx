@@ -1,8 +1,8 @@
 import { useCallback, useEffect, type FC, type SyntheticEvent } from "react";
-import { useMusicInfo } from "../../store/music-info";
-import { useMusic } from "../../store/music";
+import { useMusic, setIsPlaying } from "../../store/music";
 import { useAudio } from "../../store/audio";
 import classes from "./audio.module.css";
+import { setPlayingId, usePlayList } from "../../store/playlist";
 
 type PlayerAudioImplPropsType = {
   src: string;
@@ -10,7 +10,7 @@ type PlayerAudioImplPropsType = {
 
 const PlayerAudioImpl: FC<PlayerAudioImplPropsType> = ({ src }) => {
   const audioRef = useAudio((state) => state.audioRef);
-  const setIsPlaying = useMusic((state) => state.setIsPlaying);
+  const mode = useMusic((state) => state.mode);
 
   const setCurrent = useAudio((state) => state.setCurrent);
   const setDuration = useAudio((state) => state.setDuration);
@@ -43,12 +43,35 @@ const PlayerAudioImpl: FC<PlayerAudioImplPropsType> = ({ src }) => {
 
   const handelPlay = useCallback(() => {
     setIsPlaying(true);
-  }, [setIsPlaying]);
+  }, []);
 
   const handelPause = useCallback(() => {
     setIsPlaying(false);
-  }, [setIsPlaying]);
+  }, []);
 
+  const handelEnd = useCallback(() => {
+    if (mode !== "one") {
+      const { id, queue } = usePlayList.getState();
+
+      const index = queue.findIndex((song) => song._id === id);
+
+      if (index < queue.length - 1) {
+        setPlayingId(queue[index + 1]._id);
+      } else if (mode === "all") {
+        setPlayingId(queue[0]._id);
+      }
+    }
+  }, [mode]);
+
+  const handelSeeked = useCallback(
+    (e: SyntheticEvent<HTMLAudioElement, Event>) => {
+      const { paused } = e.target as HTMLAudioElement;
+      if (paused) {
+        handelPlay();
+      }
+    },
+    [handelPlay]
+  );
   useEffect(() => {
     audioRef.current.volume = 0;
   }, [audioRef]);
@@ -59,21 +82,28 @@ const PlayerAudioImpl: FC<PlayerAudioImplPropsType> = ({ src }) => {
       onVolumeChange={handelVolume}
       onTimeUpdate={handelTimeUpdate}
       onLoadedMetadata={handelLoadedMetadata}
+      onEnded={handelEnd}
       src={src}
       ref={audioRef}
       onPlay={handelPlay}
       onPause={handelPause}
+      onSeeked={handelSeeked}
       autoPlay
       muted
-      className={
-        classes.audio
-      }
+      loop={mode === "one"}
+      className={classes.audio}
     />
   );
 };
 
 const PlayerAudio: FC = () => {
-  const url = useMusicInfo((state) => state.url);
+  const url = usePlayList(
+    (state) => state.queue.find((song) => song._id === state.id)?.url
+  );
+
+  console.error({
+    url,
+  });
 
   if (!url) {
     return null;
