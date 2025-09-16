@@ -1,69 +1,48 @@
-# React + TypeScript + Vite
+# 🎵 RetroBeat - Nostalgic Vibes, Modern Beats
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A retro-inspired music player that brings classic aesthetics to modern streaming 🎧✨
 
-Currently, two official plugins are available:
+## 🌐 Live Preview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Check out the live demo: [**RetroBeat Live**](https://retrobeat.netlify.app/) 🎶
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack & Libraries
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- ⚛️ React
+- ⚡ Vite
+- 📘 TypeScript
+- 🐻 Zustand
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📦 Installation & Setup
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+Clone the repository and install dependencies:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone https://github.com/rahulroy0322/RetroBeat.git
+
+cd RetroBeat/frontend
+
+pnpm i # or npm i
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 Local Development
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Start the development server:
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+pnpm dev # or npm run dev
 ```
+
+## 📄 License
+
+MIT [LICENSE](../LICENSE)
+
+---
+
+*Built with ❤️ for music lovers who appreciate the golden era of sound*
+
+## 👨‍💻 Creator
+
+**Rahul Roy** - [@rahulroy0322](https://github.com/rahulroy0322)
+
+🆓 Free to use - No rights reserved. Feel free to fork, modify, and distribute!
