@@ -10,7 +10,7 @@ import PlayerEvents from "../events";
 import PlayListQueue from "../play-list-queue";
 
 const AsidePlayer: FC = () => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   const handleToggleOpen = useCallback(() => {
     setOpen((prev) => !prev);
