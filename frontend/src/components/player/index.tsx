@@ -15,8 +15,6 @@ const DiskandNob: FC = () => {
 
   const { title, thumbnail } = song || {};
 
-  console.log("rendaring", "disk nob");
-
   return (
     <>
       <div className={classes.disk} role="presentation">

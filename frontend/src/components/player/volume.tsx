@@ -22,8 +22,6 @@ const PlayerVolume: FC = () => {
     setVolume(volume * 100);
   }, [volume, setVolume]);
 
-  console.log("rendaring", "vol", angle);
-
   return (
     <div
       onTouchMove={handleTouchMove}

@@ -94,18 +94,75 @@
     <meta name="msapplication-TileColor" content="#ff2056" />
   </head>
   <body>
-    <div id="app" class="full"></div>
+    <div id="app" class="full">
+      <!-- Loading fallback -->
+      <div class="loading">
+        <style>
+          /* Loading animation */
+          .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            inset: 0;
+            background: oklch(1 0 0);
+          }
+
+          .loader {
+            width: 4rem;
+            aspect-ratio: 1;
+            border: 0.4em solid rgba(255, 255, 255, 0.1);
+            border-color: oklch(0.92 0.004 286.32);
+            border-top-color: oklch(0.645 0.246 16.439) !important;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+          }
+
+          @media (prefers-color-scheme: dark) {
+            .loading {
+              background: oklch(0.141 0.005 285.823);
+            }
+            .loader {
+              border-color: oklch(1 0 0 / 10%);
+            }
+          }
+
+          @keyframes spin {
+            0% {
+              transform: rotate(0deg);
+            }
+            100% {
+              transform: rotate(360deg);
+            }
+          }
+        </style>
+        <div class="loader"></div>
+      </div>
+    </div>
 
     <script type="module" src="/src/main.tsx"></script>
 
     <noscript>
-      <div
-        style="
-          text-align: center;
-          padding: 50px;
+      <style>
+        .main-div {
+          position: fixed;
+          inset: 0;
+          background: red;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
           font-family: Arial, sans-serif;
-        "
-      >
+          text-align: center;
+        }
+        h1 + p {
+          padding-top: 1.5rem;
+        }
+        p + p {
+          padding-top: 0.25rem;
+        }
+      </style>
+      <div class="main-div">
         <h1>🎵 RetroBeat</h1>
         <p>This application requires JavaScript to run.</p>
         <p>Please enable JavaScript in your browser settings.</p>

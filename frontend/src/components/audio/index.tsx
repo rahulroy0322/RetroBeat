@@ -101,10 +101,6 @@ const PlayerAudio: FC = () => {
     (state) => state.queue.find((song) => song._id === state.id)?.url
   );
 
-  console.error({
-    url,
-  });
-
   if (!url) {
     return null;
   }

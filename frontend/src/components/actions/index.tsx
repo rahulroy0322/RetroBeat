@@ -45,8 +45,6 @@ const ActionButton: FC<ActionButtonPropsType> = ({
 const ModeButton: FC = () => {
   const mode = useMusic((state) => state.mode);
 
-  console.log("rendaring", "mode", mode);
-
   return (
     <ActionButton
       type={mode === "none" ? "disabled" : "none"}
@@ -68,8 +66,6 @@ const PlayPauseButton: FC = () => {
     handelPlayChange(false);
   }, []);
 
-  console.log("rendering", "play pause");
-
   return (
     <>
       {isPlaying ? (
@@ -87,9 +83,6 @@ const PlayPauseButton: FC = () => {
 
 const PrevButton: FC = () => {
   const handlePrev = useCallback(() => {}, []);
-
-  console.log("rendering", "prev");
-
   return (
     <ActionButton onClick={handlePrev}>
       <PrevIcon />
@@ -99,8 +92,6 @@ const PrevButton: FC = () => {
 
 const NextButton: FC = () => {
   const handleNext = useCallback(() => {}, []);
-
-  console.log("rendering", "next");
 
   return (
     <ActionButton onClick={handleNext}>
@@ -117,8 +108,6 @@ const ShuffleButton: FC = () => {
     setPlayingId(id);
   }, []);
 
-  console.log("rendering", "random");
-
   return (
     <ActionButton onClick={handleRandom}>
       <ShuffleIcon />
@@ -126,18 +115,14 @@ const ShuffleButton: FC = () => {
   );
 };
 
-const PlayerActions: FC = () => {
-  console.log("rendering", "action");
-
-  return (
-    <div className={classes.actions}>
-      <ModeButton />
-      <PrevButton />
-      <PlayPauseButton />
-      <NextButton />
-      <ShuffleButton />
-    </div>
-  );
-};
+const PlayerActions: FC = () => (
+  <div className={classes.actions}>
+    <ModeButton />
+    <PrevButton />
+    <PlayPauseButton />
+    <NextButton />
+    <ShuffleButton />
+  </div>
+);
 
 export default PlayerActions;
