@@ -1,7 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-
-type ModeType = "one" | "all" | "none";
+import type { ModeType } from "../@types/mode.types";
 
 type UseMusicType = {
   mode: ModeType;
